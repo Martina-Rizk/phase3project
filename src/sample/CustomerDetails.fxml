@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CustomerDetails">
+   <children>
+      <TextField editable="false" layoutX="14.0" layoutY="24.0" prefHeight="25.0" prefWidth="122.0" text="First name:" />
+      <TextField editable="false" layoutX="14.0" layoutY="62.0" prefHeight="25.0" prefWidth="122.0" text="Last name:" />
+      <TextField editable="false" layoutX="14.0" layoutY="101.0" prefHeight="25.0" prefWidth="122.0" text="Address:" />
+      <TextField editable="false" layoutX="14.0" layoutY="140.0" prefHeight="25.0" prefWidth="122.0" text="City:" />
+      <TextField editable="false" layoutX="14.0" layoutY="180.0" prefHeight="25.0" prefWidth="122.0" text="Province:" />
+      <TextField editable="false" layoutX="14.0" layoutY="223.0" prefHeight="25.0" prefWidth="122.0" text="Postal code:" />
+      <TextField editable="false" layoutX="14.0" layoutY="263.0" prefHeight="25.0" prefWidth="122.0" text="Country:" />
+      <TextField editable="false" layoutX="14.0" layoutY="306.0" prefHeight="25.0" prefWidth="122.0" text="Home phone:" />
+      <TextField editable="false" layoutX="14.0" layoutY="350.0" prefHeight="25.0" prefWidth="122.0" text="Business phone:" />
+      <TextField editable="false" layoutX="14.0" layoutY="393.0" prefHeight="25.0" prefWidth="122.0" text="Email:" />
+      <TextField fx:id="txtFirstName" layoutX="159.0" layoutY="24.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtLastName" layoutX="159.0" layoutY="62.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtAddress" layoutX="159.0" layoutY="101.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtCity" layoutX="159.0" layoutY="140.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtProvince" layoutX="159.0" layoutY="180.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtPostCode" layoutX="159.0" layoutY="223.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtCountry" layoutX="159.0" layoutY="263.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtHomePhone" layoutX="159.0" layoutY="306.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtBusPhone" layoutX="159.0" layoutY="350.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtEmail" layoutX="159.0" layoutY="393.0" prefHeight="25.0" prefWidth="182.0" />
+   </children>
+</Pane>
