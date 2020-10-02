@@ -28,12 +28,8 @@ public class Controller {
     private ListView<Customers> lvCustomers;
 
     @FXML
-    private TextField txtSelectedItem;
-
-    @FXML
     void initialize() {
         assert lvCustomers != null : "fx:id=\"lvCustomers\" was not injected: check your FXML file 'sample.fxml'.";
-        assert txtSelectedItem != null : "fx:id=\"txtSelectedItem\" was not injected: check your FXML file 'sample.fxml'.";
 
         // connect with travel experts database
         Connection connect = connectDB();
@@ -58,7 +54,7 @@ public class Controller {
         lvCustomers.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                txtSelectedItem.setText(lvCustomers.getSelectionModel().getSelectedItem().toString());
+                //txtSelectedItem.setText(lvCustomers.getSelectionModel().getSelectedItem().toString());
 
                 FXMLLoader newPage = new FXMLLoader(getClass().getResource("CustomerDetails.fxml"));
                 try {
