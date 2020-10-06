@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -12,6 +13,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 public class CustomerDetails {
+    private Scene scene1;
+    private Main main;
+
+    public void setMain(Main main){this.main = main;}
+    public void setScene1(Scene scene1){this.scene1 = scene1;}
 
     @FXML
     private ResourceBundle resources;
@@ -82,6 +88,7 @@ public class CustomerDetails {
             statement.setString(10, txtEmail.getText());
             statement.setInt(11, Integer.parseInt(txtCustomerId.getText()));
             connect.close();
+            main.setScene(scene1);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

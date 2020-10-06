@@ -112,6 +112,9 @@ public class Customers {
     }
 
     // Constructor
+    public Customers() {
+    }
+
     public Customers(int customerID, String custFirstName, String custLastName, String custAddress, String custCity, String custProv, String custPostal, String custCountry, String custHomePhone, String custBusPhone, String custEmail) {
         CustomerID = customerID;
         CustFirstName = custFirstName;
