@@ -165,6 +165,9 @@ public class CustomerDetails {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/travelexperts", "martina", "password");
+            // next 2 lines for connect with SSMS
+            // Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            // c = DriverManager.getConnection("jdbc:sqlserver:localhost/sqlexpress;database=travelexperts;loginTimeout=30");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
