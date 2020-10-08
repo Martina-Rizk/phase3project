@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-public class CustomerDetails {
+public class NewCustomer {
 
     @FXML
     private ResourceBundle resources;
@@ -53,21 +53,12 @@ public class CustomerDetails {
     private TextField txtEmail;
 
     @FXML
-    private Button btnEdit;
-
-    @FXML
     private Button btnSave;
-
-    @FXML
-    void btnEditClicked(MouseEvent event) {
-        enableEditing();
-    }
 
     @FXML
     void btnSaveClicked(MouseEvent event) {
         Connection connect = connectDB();
-        String sql = "UPDATE `Customer` SET `CustFirstName`=?, `CustLastName`=?, `CustAddress`=?, `CustCity`=?, `CustProv`=?, " +
-                "`CustPostal`=?, `CustCountry`=?, `CustHomePhone`=?, `CustBusPhone`=?, `CustEmail`=? WHERE CustomerId=?";
+        String sql = "INSERT INTO `Customers`(`CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`) VALUES (?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement statement = connect.prepareStatement(sql);
             statement.setString(1, txtFirstName.getText());
@@ -80,7 +71,6 @@ public class CustomerDetails {
             statement.setString(8, txtHomePhone.getText());
             statement.setString(9, txtBusPhone.getText());
             statement.setString(10, txtEmail.getText());
-            statement.setInt(11, Integer.parseInt(txtCustomerId.getText()));
             int numRow = statement.executeUpdate();
             if (numRow == 0)
             {
@@ -88,13 +78,12 @@ public class CustomerDetails {
             }
             else
             {
-                System.out.println("updated");
+                System.out.println("inserted");
             }
             connect.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        disableEditing();
     }
 
     @FXML
@@ -110,69 +99,12 @@ public class CustomerDetails {
         assert txtHomePhone != null : "fx:id=\"txtHomePhone\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
         assert txtBusPhone != null : "fx:id=\"txtBusPhone\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
         assert txtEmail != null : "fx:id=\"txtEmail\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert btnEdit != null : "fx:id=\"btnEdit\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
         assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
 
         txtCustomerId.setEditable(false);
         txtCustomerId.setFocusTraversable(false);
-
-        disableEditing();
     }
 
-    public void setData(Customers customer){
-        txtCustomerId.setText(String.valueOf(customer.getCustomerID()));
-        txtFirstName.setText(customer.getCustFirstName());
-        txtLastName.setText(customer.getCustLastName());
-        txtAddress.setText(customer.getCustAddress());
-        txtCity.setText(customer.getCustCity());
-        txtProvince.setText(customer.getCustProv());
-        txtCountry.setText(customer.getCustCountry());
-        txtPostCode.setText(customer.getCustPostal());
-        txtHomePhone.setText(customer.getCustHomePhone());
-        txtBusPhone.setText(customer.getCustBusPhone());
-        txtEmail.setText(customer.getCustEmail());
-    }
-
-    public void enableEditing(){
-        txtFirstName.setEditable(true);
-        txtFirstName.setFocusTraversable(true);
-        txtLastName.setEditable(true);
-        txtAddress.setEditable(true);
-        txtCity.setEditable(true);
-        txtProvince.setEditable(true);
-        txtCountry.setEditable(true);
-        txtPostCode.setEditable(true);
-        txtHomePhone.setEditable(true);
-        txtBusPhone.setEditable(true);
-        txtEmail.setEditable(true);
-        btnSave.setVisible(true);
-        btnEdit.setVisible(false);
-    }
-
-    public void disableEditing(){
-        txtFirstName.setEditable(false);
-        txtFirstName.setFocusTraversable(false);
-        txtLastName.setEditable(false);
-        txtLastName.setFocusTraversable(false);
-        txtAddress.setEditable(false);
-        txtAddress.setFocusTraversable(false);
-        txtCity.setEditable(false);
-        txtCity.setFocusTraversable(false);
-        txtProvince.setEditable(false);
-        txtProvince.setFocusTraversable(false);
-        txtCountry.setEditable(false);
-        txtCountry.setFocusTraversable(false);
-        txtPostCode.setEditable(false);
-        txtPostCode.setFocusTraversable(false);
-        txtHomePhone.setEditable(false);
-        txtHomePhone.setFocusTraversable(false);
-        txtBusPhone.setEditable(false);
-        txtBusPhone.setFocusTraversable(false);
-        txtEmail.setEditable(false);
-        txtEmail.setFocusTraversable(false);
-        btnSave.setVisible(false);
-        btnEdit.setVisible(true);
-    }
     private Connection connectDB()
     {
         Connection c = null;

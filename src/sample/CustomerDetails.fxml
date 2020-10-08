@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CustomerDetails">
    <children>
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="65.0" prefHeight="25.0" prefWidth="122.0" text="First name:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="103.0" prefHeight="25.0" prefWidth="122.0" text="Last name:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="142.0" prefHeight="25.0" prefWidth="122.0" text="Address:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="181.0" prefHeight="25.0" prefWidth="122.0" text="City:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="221.0" prefHeight="25.0" prefWidth="122.0" text="Province:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="264.0" prefHeight="25.0" prefWidth="122.0" text="Postal code:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="304.0" prefHeight="25.0" prefWidth="122.0" text="Country:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="347.0" prefHeight="25.0" prefWidth="122.0" text="Home phone:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="391.0" prefHeight="25.0" prefWidth="122.0" text="Business phone:" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="434.0" prefHeight="25.0" prefWidth="122.0" text="Email:" />
       <TextField fx:id="txtFirstName" layoutX="165.0" layoutY="65.0" prefHeight="25.0" prefWidth="182.0" />
       <TextField fx:id="txtLastName" layoutX="165.0" layoutY="103.0" prefHeight="25.0" prefWidth="182.0" />
       <TextField fx:id="txtAddress" layoutX="165.0" layoutY="142.0" prefHeight="25.0" prefWidth="182.0" />
@@ -26,9 +17,19 @@
       <TextField fx:id="txtHomePhone" layoutX="165.0" layoutY="347.0" prefHeight="25.0" prefWidth="182.0" />
       <TextField fx:id="txtBusPhone" layoutX="165.0" layoutY="391.0" prefHeight="25.0" prefWidth="182.0" />
       <TextField fx:id="txtEmail" layoutX="165.0" layoutY="434.0" prefHeight="25.0" prefWidth="182.0" />
-      <Button fx:id="btnEdit" layoutX="59.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#btnEditClicked" prefHeight="35.0" prefWidth="83.0" text="Edit" />
-      <Button fx:id="btnSave" layoutX="226.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#btnSaveClicked" prefHeight="35.0" prefWidth="83.0" text="Save" />
-      <TextField editable="false" focusTraversable="false" layoutX="20.0" layoutY="26.0" prefHeight="25.0" prefWidth="122.0" text="Customer ID:" />
+      <Button fx:id="btnEdit" layoutX="142.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#btnEditClicked" prefHeight="35.0" prefWidth="83.0" text="Edit" />
+      <Button fx:id="btnSave" layoutX="142.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#btnSaveClicked" prefHeight="35.0" prefWidth="83.0" text="Save" />
       <TextField fx:id="txtCustomerId" layoutX="165.0" layoutY="26.0" prefHeight="25.0" prefWidth="182.0" />
+      <Label layoutX="20.0" layoutY="26.0" prefHeight="25.0" prefWidth="122.0" text="Customer ID:" />
+      <Label layoutX="20.0" layoutY="65.0" prefHeight="25.0" prefWidth="122.0" text="First name:" />
+      <Label layoutX="20.0" layoutY="103.0" prefHeight="25.0" prefWidth="122.0" text="Last name:" />
+      <Label layoutX="20.0" layoutY="142.0" prefHeight="25.0" prefWidth="122.0" text="Address:" />
+      <Label layoutX="20.0" layoutY="181.0" prefHeight="25.0" prefWidth="122.0" text="City:" />
+      <Label layoutX="20.0" layoutY="221.0" prefHeight="25.0" prefWidth="122.0" text="Province:" />
+      <Label layoutX="20.0" layoutY="264.0" prefHeight="25.0" prefWidth="122.0" text="Postal code:" />
+      <Label layoutX="20.0" layoutY="304.0" prefHeight="25.0" prefWidth="122.0" text="Country:" />
+      <Label layoutX="20.0" layoutY="347.0" prefHeight="25.0" prefWidth="122.0" text="Home Phone:" />
+      <Label layoutX="20.0" layoutY="391.0" prefHeight="25.0" prefWidth="122.0" text="Business Phone:" />
+      <Label layoutX="20.0" layoutY="434.0" prefHeight="25.0" prefWidth="122.0" text="Email:" />
    </children>
 </Pane>

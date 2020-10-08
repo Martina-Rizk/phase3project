@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -28,8 +29,29 @@ public class Controller {
     private ListView<Customers> lvCustomers;
 
     @FXML
+    private Button btnAdd;
+
+    @FXML
+    void btnAddOnClicked(MouseEvent event) {
+
+        FXMLLoader newPage = new FXMLLoader(getClass().getResource("NewCustomer.fxml"));
+        try {
+            Parent root = newPage.load();
+            // get CustomerDetails controller
+            NewCustomer newCustomer = newPage.getController();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("New Customer");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     void initialize() {
         assert lvCustomers != null : "fx:id=\"lvCustomers\" was not injected: check your FXML file 'sample.fxml'.";
+        assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'sample.fxml'.";
 
         // connect with travel experts database
         Connection connect = connectDB();
@@ -54,8 +76,6 @@ public class Controller {
         lvCustomers.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                //txtSelectedItem.setText(lvCustomers.getSelectionModel().getSelectedItem().toString());
-
                 FXMLLoader newPage = new FXMLLoader(getClass().getResource("CustomerDetails.fxml"));
                 try {
                     Parent root = newPage.load();
