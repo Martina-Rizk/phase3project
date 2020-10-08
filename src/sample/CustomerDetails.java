@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -12,6 +13,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 public class CustomerDetails {
+    private Scene scene1;
+    private Main main;
+
+    public void setMain(Main main){this.main = main;}
+    public void setScene1(Scene scene1){this.scene1 = scene1;}
 
     @FXML
     private ResourceBundle resources;
@@ -91,6 +97,7 @@ public class CustomerDetails {
                 System.out.println("updated");
             }
             connect.close();
+            main.setScene(scene1);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -179,6 +186,9 @@ public class CustomerDetails {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/travelexperts", "martina", "password");
+            // next 2 lines for connect with SSMS
+            // Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            // c = DriverManager.getConnection("jdbc:sqlserver:localhost/sqlexpress;database=travelexperts;loginTimeout=30");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
