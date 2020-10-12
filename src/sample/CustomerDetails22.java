@@ -1,21 +1,18 @@
 package sample;
 
-import javafx.application.Platform;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-import java.net.URL;
-import java.sql.*;
-import java.util.ResourceBundle;
-public class CustomerDetails {
-    private Scene scene1;
-    private Main main;
-
-    public void setMain(Main main){this.main = main;}
-    public void setScene1(Scene scene1){this.scene1 = scene1;}
+public class CustomerDetails22 {
 
     @FXML
     private ResourceBundle resources;
@@ -24,7 +21,7 @@ public class CustomerDetails {
     private URL location;
 
     @FXML
-    private TextField txtCustomerId;
+    private Tab tabPersonalInfo;
 
     @FXML
     private TextField txtFirstName;
@@ -61,6 +58,9 @@ public class CustomerDetails {
 
     @FXML
     private Button btnSave;
+
+    @FXML
+    private TextField txtCustomerId;
 
     @FXML
     private Button btnDelete;
@@ -125,7 +125,7 @@ public class CustomerDetails {
             }
             connect.close();
             Controller.stage.close();
-           // main.setScene(scene1);
+            // main.setScene(scene1);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -134,20 +134,21 @@ public class CustomerDetails {
 
     @FXML
     void initialize() {
-        assert txtCustomerId != null : "fx:id=\"txtCustomerId\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtFirstName != null : "fx:id=\"txtFirstName\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtLastName != null : "fx:id=\"txtLastName\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtAddress != null : "fx:id=\"txtAddress\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtCity != null : "fx:id=\"txtCity\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtProvince != null : "fx:id=\"txtProvince\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtPostCode != null : "fx:id=\"txtPostCode\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtCountry != null : "fx:id=\"txtCountry\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtHomePhone != null : "fx:id=\"txtHomePhone\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtBusPhone != null : "fx:id=\"txtBusPhone\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert txtEmail != null : "fx:id=\"txtEmail\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert btnEdit != null : "fx:id=\"btnEdit\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
-        assert btnDelete != null : "fx:id=\"btnDelete\" was not injected: check your FXML file 'CustomerDetails.fxml'.";
+        assert tabPersonalInfo != null : "fx:id=\"tabPersonalInfo\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtFirstName != null : "fx:id=\"txtFirstName\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtLastName != null : "fx:id=\"txtLastName\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtAddress != null : "fx:id=\"txtAddress\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtCity != null : "fx:id=\"txtCity\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtProvince != null : "fx:id=\"txtProvince\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtPostCode != null : "fx:id=\"txtPostCode\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtCountry != null : "fx:id=\"txtCountry\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtHomePhone != null : "fx:id=\"txtHomePhone\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtBusPhone != null : "fx:id=\"txtBusPhone\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtEmail != null : "fx:id=\"txtEmail\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert btnEdit != null : "fx:id=\"btnEdit\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert txtCustomerId != null : "fx:id=\"txtCustomerId\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
+        assert btnDelete != null : "fx:id=\"btnDelete\" was not injected: check your FXML file 'CustomerDetails22.fxml'.";
 
         txtCustomerId.setEditable(false);
         txtCustomerId.setFocusTraversable(false);

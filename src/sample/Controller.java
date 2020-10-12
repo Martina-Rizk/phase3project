@@ -19,6 +19,8 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Controller {
+    public static Stage stage = new Stage();
+
     @FXML
     private ResourceBundle resources;
 
@@ -76,13 +78,13 @@ public class Controller {
         lvCustomers.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                FXMLLoader newPage = new FXMLLoader(getClass().getResource("CustomerDetails.fxml"));
+                FXMLLoader newPage = new FXMLLoader(getClass().getResource("CustomerDetails22.fxml"));
                 try {
                     Parent root = newPage.load();
                     // get CustomerDetails controller
-                    CustomerDetails customerDetail = newPage.getController();
+                    CustomerDetails22 customerDetail = newPage.getController();
                     customerDetail.setData(lvCustomers.getSelectionModel().getSelectedItem());
-                    Stage stage = new Stage();
+
                     stage.setScene(new Scene(root));
                     stage.setTitle("Customer Details");
                     stage.show();

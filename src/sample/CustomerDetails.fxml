@@ -17,7 +17,7 @@
       <TextField fx:id="txtHomePhone" layoutX="165.0" layoutY="347.0" prefHeight="25.0" prefWidth="182.0" />
       <TextField fx:id="txtBusPhone" layoutX="165.0" layoutY="391.0" prefHeight="25.0" prefWidth="182.0" />
       <TextField fx:id="txtEmail" layoutX="165.0" layoutY="434.0" prefHeight="25.0" prefWidth="182.0" />
-      <Button fx:id="btnEdit" layoutX="142.0" layoutY="474.0" mnemonicParsing="false" onMouseClicked="#btnEditClicked" prefHeight="35.0" prefWidth="83.0" text="Edit" />
+      <Button fx:id="btnEdit" layoutX="53.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#btnEditClicked" prefHeight="35.0" prefWidth="83.0" text="Edit" />
       <Button fx:id="btnSave" layoutX="142.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#btnSaveClicked" prefHeight="35.0" prefWidth="83.0" text="Save" />
       <TextField fx:id="txtCustomerId" layoutX="165.0" layoutY="26.0" prefHeight="25.0" prefWidth="182.0" />
       <Label layoutX="20.0" layoutY="26.0" prefHeight="25.0" prefWidth="122.0" text="Customer ID:" />
@@ -31,5 +31,6 @@
       <Label layoutX="20.0" layoutY="347.0" prefHeight="25.0" prefWidth="122.0" text="Home Phone:" />
       <Label layoutX="20.0" layoutY="391.0" prefHeight="25.0" prefWidth="122.0" text="Business Phone:" />
       <Label layoutX="20.0" layoutY="434.0" prefHeight="25.0" prefWidth="122.0" text="Email:" />
+      <Button fx:id="btnDelete" layoutX="230.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#btnDeleteClicked" prefHeight="35.0" prefWidth="83.0" text="Delete" />
    </children>
 </Pane>

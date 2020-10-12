@@ -76,11 +76,11 @@ public class NewCustomer {
             {
                 System.out.println("failed");
             }
-            else
-            {
+            else {
                 System.out.println("inserted");
             }
             connect.close();
+            Controller.stage.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
